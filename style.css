@@ -1,0 +1,683 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Roboto+Slab:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,100,900");
+
+/* borderbox allows to include padding and border in an elements total width and height  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* this will hide all the left n right extra space from header n section */
+#wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1440px;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: monospace;
+}
+
+:root {
+  --robotomono: "Mono", cursive;
+  --robotoslab: "Slab", cursive;
+  --light-gray: rgba(255, 255, 255, 0);
+  --primaryColor: #f09d51;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+}
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+
+header a {
+  font-family: monospace;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+}
+
+.header {
+  font-family: monospace;
+  color: white;
+}
+
+.header-intro {
+  background: url("./assests/climbing\ background.jpg");
+  margin-top: 20px;
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* #nav li ul { */
+/* position: absolute; */
+/* z-index: 100; */
+/* } */
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+header .nav-item {
+  padding: 0.5em;
+}
+
+header .row .col-md-7 {
+  padding: 22vmin 1vmin;
+  padding-bottom: 35vmin;
+}
+header .row .col-md-5 img {
+  width: 90%;
+}
+
+header .container .col-md-7 h6 {
+  padding: 1vmin;
+  letter-spacing: 4px;
+}
+
+header .container .col-md-7 h1 {
+  font-size: 6vmin;
+  font-weight: bold;
+  padding: 0.1em 0em;
+}
+
+header .container .col-md-7 p {
+  padding: 1vmin 5vmin;
+}
+
+header .container .col-md-7 button {
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+/* --------------- Section 1 ---------------- */
+
+.section-1 {
+  padding: 5vmin 0;
+}
+
+.section-intro {
+  font-family: monospace;
+  text-align: center;
+  padding-bottom: 10vmin;
+}
+
+.section-1 .row .col-md-6 .pray img {
+  width: 100%;
+  border-radius: 0.2em;
+}
+
+.section-1 .row .col-md-6:last-child {
+  position: relative;
+}
+
+.section-1 .row .col-md-6 .panel {
+  background: white;
+  border-radius: 3px;
+  text-align: left;
+  padding: 3vmin 5vmin 3vmin 10vmin;
+  box-shadow: 0px 25px 42px rgb(194, 191, 191);
+  font-family: monospace;
+}
+
+.sale {
+  height: 26em;
+  margin-top: 15px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0px 25px 42px rgb(194, 191, 191);
+  font-family: monospace;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sale-img {
+  max-width: 100%;
+  max-height: 100%;
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.sale-head {
+  font-weight: bolder;
+  padding: 3em 0 0.5em 0.5em;
+  font-size: 2em;
+  color: white;
+  position: absolute;
+}
+
+.sale-p {
+  font-size: 2em;
+  color: white;
+  position: absolute;
+  padding: 10em 0 0.5em 0.5em;
+}
+
+.sale h2 {
+  font-size: 5em;
+  color: white;
+  position: absolute;
+  padding: 1.5em 0 0.2em 0.2em;
+}
+
+.top-picks-head {
+  font-weight: bold;
+  padding: 0.4em 0;
+  font-size: 2em;
+}
+
+.section-1 .row .col-md-6 .panel p {
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* --------------- Section 2 ---------------- */
+
+.cover {
+  width: 100%;
+  height: 55vmin;
+  background: url("./assests/climb-unique.jpeg");
+  background-position: 0rem -19rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.cover .content {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  padding-top: 15vmin;
+}
+
+.cover .content > h1 {
+  font-family: monospace;
+  font-size: 5vmin;
+  color: whitesmoke;
+}
+
+.cover .content > p {
+  font-family: monospace;
+  font-weight: 100;
+  font-size: 4vmin;
+  color: white;
+}
+
+.top-picks .rect {
+  position: relative;
+  z-index: 1;
+  background-color: white;
+  width: 15rem;
+  height: 12rem;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 1px 2px 30px 0px;
+}
+
+.bold-h1 {
+  font-weight: bolder;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  padding-top: 2.5rem;
+}
+
+.thin-h1 {
+  font-weight: lighter !important;
+  font-family: var(--bs-body-font-family);
+  position: absolute;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding-top: 2.5rem;
+}
+
+.top-pick-img {
+  width: 100%;
+  position: absolute;
+  border-radius: inherit;
+  height: inherit;
+}
+
+.rect:hover img {
+  transform: scale(1.1);
+}
+
+.top-picks {
+  margin-top: -15vmin;
+}
+
+.purchase > h1 {
+  padding-top: 15vmin;
+  padding-bottom: 0.1em;
+  font-family: monospace;
+}
+
+.purchase .cards .card {
+  width: 15rem;
+  margin: 2vmin;
+  height: 60vmin;
+}
+
+.cards div {
+  padding: 0;
+  margin: 0;
+  /* display: flex; */
+}
+
+.cards .title {
+  background: rgba(208, 241, 241, 0.1);
+  padding: 1.4rem 2rem;
+  font-size: 2vmin;
+}
+
+.card .card-text {
+  padding: 1rem 2rem;
+  color: lightgrey;
+}
+
+.card-body .pricing {
+  background: rgba(208, 241, 241, 0.1);
+  border-top-right-radius: 100px;
+  border-top-left-radius: 1px;
+}
+
+.card-body .pricing > h1 {
+  font-size: 3vmin;
+  padding: 0.5em 0.5em;
+}
+
+/* --------------- Section 3 ---------------- */
+
+.section-3 {
+  height: 100%;
+  margin-top: 15vmin;
+  background: lightgray;
+}
+
+.section-3 .col-md-12 > h1 {
+  padding: 0.5em 0 0.5em 0;
+  font-size: 10vmin;
+}
+
+.section-3 .col-md-12 > p {
+  padding: 0 4em;
+  color: lightgrey;
+  font-size: 6vmin;
+}
+
+.section-3 .desktop {
+  display: inline-block;
+  border-radius: 1em;
+  border: 1px solid rgb(255, 255, 143);
+  padding: 6vmin 4.5vmin;
+  margin: 1em;
+}
+
+.section-3 .desktop h3 {
+  font-size: 5vmin;
+  font-weight: bold;
+}
+
+.backdrop-fa {
+  background-image: url("./assests/fb-picture.jpeg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.backdrop-insta {
+  background-image: url("./assests/insta-picture.jpeg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.backdrop-yt {
+  background-image: url("./assests/yt-picture.jpeg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.text {
+  color: white;
+  font-family: monospace;
+}
+
+.newsletter {
+  width: 100%;
+  padding: 2rem 0 1rem 0;
+}
+
+.section-3 input {
+  border: none !important;
+}
+
+.section-3 input::placeholder {
+  color: white !important;
+}
+
+.section-3 .input-group .input-group-text {
+  background: rgb(82, 82, 82);
+  border: none;
+}
+
+.section-3 i {
+  line-height: unset;
+}
+
+/* --------------- Section 4 ---------------- */
+
+.section-4 .container h1 {
+  font-size: 6vmin;
+  padding-top: 8vmin;
+}
+
+.section-4 .team {
+  padding: 10vmin 4vmin;
+}
+
+.section-4 .card {
+  width: 22rem;
+  margin-top: 2vmin;
+}
+
+.section-4 .card .card-text {
+  padding: 0.5em;
+}
+
+.section-4 .card .card-body > a {
+  font-size: 1.5em;
+}
+
+.section-4 .carousel-item {
+  padding-left: 2rem;
+}
+
+.border-radius {
+  border-radius: 340px;
+  width: 60%;
+}
+
+/* --------------- Footer ---------------- */
+
+footer {
+  background: rgba(0, 0, 0, 0.815);
+  overflow-x: hidden;
+  padding: 14vmin 18vmin;
+}
+
+footer .payment {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+}
+
+footer p {
+  color: rgb(107, 103, 103) !important;
+}
+
+footer p > span {
+  color: orange;
+}
+
+footer .column i {
+  color: blanchedalmond;
+}
+
+footer .column i + i {
+  padding: 0 0.5em;
+}
+
+footer h4 {
+  padding-top: 1rem;
+}
+
+.products {
+  padding: 4rem 0;
+}
+.section-title h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.products-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+}
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+.bag-btn {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  background: var(--primaryColor);
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  transition: var(--mainTransition);
+  transform: translateX(101%);
+  cursor: pointer;
+}
+.bag-btn:hover {
+  color: var(--mainWhite);
+}
+.fa-shopping-cart {
+  margin-right: 0.5rem;
+}
+.img-container:hover .bag-btn {
+  transform: translateX(0);
+}
+.product-img {
+  display: block;
+  width: 100%;
+  min-height: 12rem;
+  transition: var(--mainTransition);
+}
+.img-container:hover .product-img {
+  opacity: 0.5;
+}
+
+.product h3 {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+
+.product h4 {
+  margin-top: 0.7rem;
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
+  text-align: center;
+}
+
+/* ---------------End of Products ---------------- */
+/* --------------- Cart ---------------- */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transition: var(--mainTransition);
+  background: rgb(240, 157, 81, 0.5);
+  z-index: 2;
+  visibility: hidden;
+}
+
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: rgb(231, 226, 221);
+  padding: 1.5rem;
+  transition: var(--mainTransition);
+  transform: translateX(100%);
+}
+
+.showCart {
+  transform: translateX(0);
+}
+
+.transparentBcg {
+  visibility: visible;
+}
+@media screen and (min-width: 768px) {
+  .cart {
+    width: 30vw;
+    min-width: 450px;
+  }
+}
+
+.close-cart {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.cart h2 {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 2rem;
+}
+/*---------- Cart Item -------------------- */
+.cart-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.cart-item img {
+  width: 75px;
+  height: 75px;
+}
+.cart-item h4 {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.cart-item h5 {
+  margin: 0.5rem 0;
+  letter-spacing: var(--mainSpacing);
+}
+.item-amount {
+  text-align: center;
+}
+.remove-item {
+  color: grey;
+  cursor: pointer;
+}
+.fa-chevron-up,
+.fa-chevron-down {
+  color: var(--primaryColor);
+  cursor: pointer;
+}
+/*---------- End of Cart Item -------------------- */
+
+.cart-footer {
+  margin-top: 2rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+.cart-footer h3 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+/* --------------- End of Cart ---------------- */
+
+/* random styling */
+.ms-auto {
+  margin-right: auto;
+}
+
+.highlight-txt {
+  /* text-align: start; */
+  /* border: 2px solid; */
+  /* background: rgb(245, 240, 240); */
+  margin: 0px 30px 0px 30px;
+}
+
+.highlight-box {
+  background: #f3cf1a none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 0 25px 25px 0;
+  color: #fff;
+  float: left;
+  letter-spacing: 0.2px;
+  margin: auto 0;
+}
+
+.img {
+  width: 100%;
+  padding-top: 1rem;
+  height: auto;
+  vertical-align: middle;
+}
+
+.delivery-icon {
+  width: 22%;
+  height: 25%;
+  padding-right: 0.5em;
+}
+
+.p-5 {
+  color: white;
+  padding-top: 6em !important;
+}

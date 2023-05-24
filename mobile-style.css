@@ -1,0 +1,35 @@
+@media only screen and (max-width: 768px) {
+  header .navbar-brand {
+    padding-left: 1rem;
+  }
+  .section-1 .row .col-md-6 .panel {
+    position: initial;
+    width: initial;
+    height: initial;
+  }
+
+  .section-2 .cover {
+    background-position: center;
+  }
+
+  .section-2 .cover h1 {
+    font-size: 3rem;
+  }
+
+  .section-2 .cover .content {
+    padding-top: 6vmin;
+  }
+
+  .top-picks .rect {
+    width: 15rem;
+    height: 12rem;
+  }
+
+  .top-picks .rect h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-3 {
+    height: inherit;
+  }
+}
