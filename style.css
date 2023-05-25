@@ -37,6 +37,15 @@ body {
   --mainTransition: all 0.3s linear;
 }
 
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  z-index: 1;
+  /* max-width: 1170px; */
+  width: 100%;
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -53,7 +62,7 @@ body {
   position: absolute;
   top: -8px;
   right: -8px;
-  background: var(--primaryColor);
+  background: #f3cf1a;
   padding: 0 5px;
   border-radius: 30%;
   color: var(--mainWhite);
@@ -68,6 +77,7 @@ header a {
 .header {
   font-family: monospace;
   color: white;
+  min-height: calc(100vh - 60px);
 }
 
 .header-intro {
@@ -120,6 +130,15 @@ header .container .col-md-7 p {
 header .container .col-md-7 button {
   border-radius: 30px;
   font-weight: bold;
+}
+
+.test {
+  transition: var(--mainTransition) !important;
+}
+
+.test:hover {
+  background: transparent;
+  color: white;
 }
 
 /* --------------- Section 1 ---------------- */
@@ -554,7 +573,7 @@ footer h4 {
   transition: var(--mainTransition);
   background: rgb(240, 157, 81, 0.5);
   z-index: 2;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 .cart {
@@ -568,7 +587,7 @@ footer h4 {
   background: rgb(231, 226, 221);
   padding: 1.5rem;
   transition: var(--mainTransition);
-  transform: translateX(100%);
+  /* transform: translateX(100%); */
 }
 
 .showCart {
@@ -638,6 +657,23 @@ footer h4 {
 .cart-footer h3 {
   text-transform: capitalize;
   margin-bottom: 1rem;
+}
+
+.banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+  border-radius: 5px;
+}
+.banner-btn:hover {
+  background: transparent;
+  color: var(--primaryColor);
 }
 
 /* --------------- End of Cart ---------------- */
