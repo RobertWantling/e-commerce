@@ -155,18 +155,38 @@
       </div>
       <!-- single product -->
       <div class="products-center">
-        <article class="product">
-          <div class="img-container">
-            <img src="../assests/products/product-1.jpeg" alt="product" class="product-img">
-            <button class="bag-btn" data-id="1">
-              <i class="fas fa-shopping-cart">add to basket</i>
-            </button>
-          </div>
-          <h3>Men's Tarantulace Climbing Shoes</h3>
-          <h4>£59.00</h4>
-        </article>
       </div>
     </section>
+    <!-- cart -->
+    <div class="cart-overlay">
+      <div class="cart">
+        <span class="close-cart">
+          <i class="fas fa-window-close"></i>
+        </span>
+        <h2>Your basket</h2>
+        <div class="cart-content">
+          <!-- cart item -->
+          <div class="cart-item">
+            <img src="../assests/products/product-1.jpeg" alt="" />
+            <div>
+              <h4>Men's Tarantulace Climbing Shoes</h4>
+              <h5>£59.00</h5>
+              <span class="remove-item">remove</span>
+            </div>
+            <div>
+              <i class="fas fa-chevron-up"></i>
+              <p class="item-amount">1</p>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+          <!-- end cart item -->
+        </div>
+        <div class="cart-footer">
+          <h3>Your total : £ <span class="cart-total">0</span></h3>
+          <button class="clear-cart banner-btn">clear cart</button>
+        </div>
+      </div>
+    </div>
     
   </main>
       <footer>
