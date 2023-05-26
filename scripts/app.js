@@ -51,6 +51,13 @@ class UI {
           <button class="bag-btn" data-id=${product.id}>
             <i class="fas fa-shopping-cart">add to basket</i>
           </button>
+      
+      <div class="add-to-wishlist">
+        <img src="../pages/assests/icons/heart.png" alt="add-to-wishlist">
+      </div>
+      <div class="add-to-cart">
+        <img src="../pages/assests/icons/bag-plus.png" alt="add-to-cart">
+      </div>
       </div>
       <h3>${product.title}</h3>
       <h4>£${product.price}</h4>
@@ -60,9 +67,8 @@ class UI {
     productsDOM.innerHTML = result;
   }
 }
-
 // Local storage
-
+// <img src="../pages/assests/icons/heart.png" alt="add to wish list">
 class Storage {}
 
 // EL where kick things off - so once things are loaded things start to load
