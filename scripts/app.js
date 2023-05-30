@@ -8,9 +8,14 @@ const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
+const btns = document.querySelectorAll(".bag-btn");
 
 // main cart variable - where be getting info from local storage
 let cart = [];
+
+// buttons
+let buttonsDOM = [];
+// when run getBagBtns easy assign them
 
 // classes responsible for getting products - locally (later content full data management)
 
@@ -66,16 +71,63 @@ class UI {
     });
     productsDOM.innerHTML = result;
   }
+  getBagBtns() {
+    const buttons = [...document.querySelectorAll(".bag-btn")];
+    // console.log(buttons); // call this method after calling it ^^ - easier with spread Op ... turn into an array able to manipulate - can also manipulate the nodeList
+    buttonsDOM = buttons;
+    buttons.forEach((button) => {
+      let id = button.dataset.id;
+      // check if item is in cart
+      let inCart = cart.find((item) => item.id === id);
+      if (inCart) {
+        (button.innerText = "In Basket"), (button.disabled = true); // if item is already in the cart
+      }
+      button.addEventListener("click", (event) => {
+        // through use of target able to disable text and add to cart
+        event.target.innerText = "In Basket";
+        event.target.disabled = true;
+        // these two things will happen when nothing is in the cart
+        // get product from products based on id from the btn
+
+        // add product to the cart
+
+        // save cart in local storage
+
+        // want to set the values
+
+        // display cart items
+
+        // show cart w/ overlay on webpage
+      });
+    });
+  }
 }
 // Local storage
 // <img src="../pages/assests/icons/heart.png" alt="add to wish list">
-class Storage {}
+class Storage {
+  // static method - can use without creating an instance
+  static saveProducts(products) {
+    // have to stringify the products array
+    localStorage.setItem("products", JSON.stringify(products));
+  }
+}
 
 // EL where kick things off - so once things are loaded things start to load
 document.addEventListener("DOMContentLoaded", () => {
   const ui = new UI();
   const products = new Products();
 
-  // get all products
-  products.getProducts().then((products) => ui.displayProducts(products));
+  // get all products / .then allow you to chain
+  products
+    .getProducts()
+    .then((products) => {
+      // then - get product
+      ui.displayProducts(products); // write 1 method 'ui' and display the product
+      Storage.saveProducts(products); // static - call class - to save
+    })
+    .then(() => {
+      ui.getBagBtns();
+    });
 });
+// use json parse to get back the info from the stringify called on saveProducts
+// local storage okay for a few items but once have 100's products best to use contentful for data

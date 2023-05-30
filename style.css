@@ -45,6 +45,7 @@ body {
   z-index: 1;
   /* max-width: 1170px; */
   width: 100%;
+  padding-right: 1%;
 }
 
 .navbar-brand {
