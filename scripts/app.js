@@ -129,9 +129,9 @@ class UI {
       <span class="remove-item" data-id=${item.id}>remove</span>
     </div>
     <div>
-      <i class="fas fa-chevron-up data-id=${item.id}"></i>
+      <i class="fas fa-chevron-up" data-id=${item.id}></i>
       <p class="item-amount">${item.amount}</p>
-      <i class="fas fa-chevron-down data-id=${item.id}"></i>
+      <i class="fas fa-chevron-down" data-id=${item.id}></i>
     </div>`;
     // append div to cart-content
     cartContent.appendChild(div);
@@ -156,7 +156,83 @@ class UI {
     cartOverlay.classList.remove("transparentBcg");
     cartDOM.classList.remove("showCart");
   }
+  cartLogic() {
+    // clear cart button
+    // select clearCart btn - event bubbling whatever clicking on will decrease or increase value
+    clearCartBtn.addEventListener("click", () => {
+      this.clearCart();
+    }); // this.clearCart // if going to access methods in a class be careful where pointing - using this here points to the button and not clearCart variable. if its just accessing DOM elements and adding something can use this. as not accessing anything within class - why this.showCart works
+    // cart functionality - need to access event prop as want to be able to remove / decrease / increase
+    cartContent.addEventListener("click", (event) => {
+      // can check if class of the item that is clicked on say 'remove-item', then run a functionality, if item has class of chav-up or chav-down then fire invidiual functions for them
+      if (event.target.classList.contains("remove-item")) {
+        // fucntionaltty get item in basket
+        let removeItem = event.target;
+        // use dataset to remove from local storage
+        let id = removeItem.dataset.id;
+        cartContent.removeChild(removeItem.parentElement.parentElement);
+        // this will remove from cart
+        this.removeItem(id);
+        // still need to remove from DOM - need to access parent of parent
+      } else if (event.target.classList.contains("fa-chevron-up")) {
+        let addAmount = event.target;
+        let id = addAmount.dataset.id;
+        // values in cart array - so push new amount into local storage - use find method for cart
+        let tempItem = cart.find((item) => item.id === id);
+        tempItem.amount = tempItem.amount + 1;
+        // want to update cart in local storage as well - pass in new cart
+        Storage.saveCart(cart);
+        // calc the totals in cart
+        this.setCartValues(cart); // pass cart that was just updated
+        // and total of items we have in basket
+        addAmount.nextElementSibling.innerText = tempItem.amount;
+      } else if (event.target.classList.contains("fa-chevron-down")) {
+        let lowerAmount = event.target;
+        let id = lowerAmount.dataset.id;
+        // want to select cart value - through find method
+        let tempItem = cart.find((item) => item.id === id);
+        tempItem.amount = tempItem.amount - 1;
+        if (tempItem.amount > 0) {
+          Storage.saveCart(cart);
+          this.setCartValues(cart);
+          lowerAmount.previousElementSibling.innerText = tempItem.amount;
+        } else {
+          cartContent.removeChild(lowerAmount.parentElement.parentElement);
+          this.removeItem(id);
+        }
+      }
+    });
+  }
+  clearCart() {
+    // want to get all ID's of all items that are in the cart - sync with what is in the local storage
+    let cartItems = cart.map((item) => item.id);
+    // want to loop over this array cartItems and call another method which will remove item from cart
+    cartItems.forEach((id) => this.removeItem(id));
+    console.log(cartContent.children);
+    // target cartContent to remove all items - use while - dom el have prop of children - can check value if length bigger than 0 then want to remove them
+    while (cartContent.children.length > 0) {
+      cartContent.removeChild(cartContent.children[0]);
+    }
+    this.hideCart();
+  }
+  removeItem(id) {
+    // want to remove item from cart - want to filter account return all items that dont have certain id
+    cart = cart.filter((item) => item.id !== id);
+    // update values after removing items - new value
+    this.setCartValues(cart);
+    // get last value of cart - item remove no longer there need to store it
+    Storage.saveCart(cart);
+    // clear cart - want to refresh in the basket to normal
+    let button = this.getSingleBtn(id);
+    button.disabled = false;
+    button.innerHTML = `<i class="fas fa-shopping-cart"></i>add to basket`;
+  }
+  // method get id and return btn in btns array. Use find as not node list but an array - return btn that has attritubute of dataset.id equal to the btn we are passing in
+  getSingleBtn(id) {
+    return buttonsDOM.find((button) => button.dataset.id === id);
+  }
 }
+
 // Local storage
 // <img src="../pages/assests/icons/heart.png" alt="add to wish list">
 class Storage {
@@ -199,6 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(() => {
       ui.getBagBtns();
+      ui.cartLogic();
     });
 });
 // use json parse to get back the info from the stringify called on saveProducts
