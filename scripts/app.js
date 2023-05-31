@@ -1,3 +1,8 @@
+var client = contentful.createClient({
+  space: "ks7a7jmu3m9e",
+  accessToken: "U0PAlfEmh3x6-StIXHMJEe7IfgP7nye4NI97DD601bo",
+});
+
 // variables
 const cartBtn = document.querySelector(".cart-btn");
 const closedCartBtn = document.querySelector(".close-cart");
@@ -22,9 +27,15 @@ let buttonsDOM = [];
 class Products {
   async getProducts() {
     try {
-      let result = await fetch("../scripts/products.json"); // ajax request
-      let data = await result.json(); // sysncrounous code in syncrounous matter
-      let products = data.items;
+      let contenful = await client.getEntries({
+        content_type: "emporium",
+      });
+      console.log(contenful);
+
+      // recieve local data via fetch
+      // let result = await fetch("../scripts/products.json"); // ajax request
+      // let data = await result.json(); // sysncrounous code in syncrounous matter
+      let products = contenful.items;
       products = products.map((item) => {
         const { title, price } = item.fields;
         const { id } = item.sys;
@@ -44,7 +55,7 @@ class Products {
 class UI {
   // this method get array Products - call method once get products @ .then
   displayProducts(products) {
-    console.log(products);
+    // console.log(products);
     let result = "";
     products.forEach((product) => {
       result += `
