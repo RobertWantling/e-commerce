@@ -8,7 +8,7 @@ const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
-const btns = document.querySelectorAll(".bag-btn");
+// const btns = document.querySelectorAll(".bag-btn");
 
 // main cart variable - where be getting info from local storage
 let cart = [];
@@ -45,7 +45,7 @@ class UI {
   // this method get array Products - call method once get products @ .then
   displayProducts(products) {
     console.log(products);
-    let result = " ";
+    let result = "";
     products.forEach((product) => {
       result += `
     <article class="product">
@@ -88,18 +88,73 @@ class UI {
         event.target.disabled = true;
         // these two things will happen when nothing is in the cart
         // get product from products based on id from the btn
-
+        let cartItem = { ...Storage.getProduct(id), amount: 1 }; // id is from ^^ from the dataset attribute
+        // use spread on 'Storage' will get all info from object we are returning on products - add one more property of amount
         // add product to the cart
+        cart = [...cart, cartItem];
 
         // save cart in local storage
+        Storage.saveCart(cart); // save cart in storage
 
         // want to set the values
+        this.setCartValues(cart);
 
         // display cart items
-
+        this.addCartItem(cartItem);
         // show cart w/ overlay on webpage
+        this.showCart();
       });
     });
+  }
+  setCartValues(cart) {
+    let tempTotal = 0;
+    let itemsTotal = 0;
+    cart.map((item) => {
+      tempTotal += item.price * item.amount;
+      itemsTotal += item.amount;
+    });
+    cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
+    cartItems.innerText = itemsTotal;
+  }
+
+  addCartItem(item) {
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
+    // This is the item for basket
+    div.innerHTML = `
+    <img src= ${item.image} alt="product" />
+    <div>
+      <h4>${item.title}</h4>
+      <h5>£${item.price}</h5>
+      <span class="remove-item" data-id=${item.id}>remove</span>
+    </div>
+    <div>
+      <i class="fas fa-chevron-up data-id=${item.id}"></i>
+      <p class="item-amount">${item.amount}</p>
+      <i class="fas fa-chevron-down data-id=${item.id}"></i>
+    </div>`;
+    // append div to cart-content
+    cartContent.appendChild(div);
+    console.log(cartContent);
+  }
+  showCart() {
+    cartOverlay.classList.add("transparentBcg");
+    cartDOM.classList.add("showCart");
+  }
+  setupAPP() {
+    // empty cart ^ will be assigned values from storage
+    cart = Storage.getCart();
+    this.setCartValues(cart);
+    this.populateCart(cart);
+    cartBtn.addEventListener("click", this.showCart);
+    closedCartBtn.addEventListener("click", this.hideCart);
+  }
+  populateCart(cart) {
+    cart.forEach((item) => this.addCartItem(item));
+  }
+  hideCart() {
+    cartOverlay.classList.remove("transparentBcg");
+    cartDOM.classList.remove("showCart");
   }
 }
 // Local storage
@@ -110,12 +165,29 @@ class Storage {
     // have to stringify the products array
     localStorage.setItem("products", JSON.stringify(products));
   }
+  static getProduct(id) {
+    let products = JSON.parse(localStorage.getItem("products"));
+    // return product from getProduct method
+    return products.find((product) => product.id === id);
+  }
+  static saveCart(cart) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  static getCart() {
+    // if have some kind of value in local storage then return
+    return localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+  }
 }
 
 // EL where kick things off - so once things are loaded things start to load
 document.addEventListener("DOMContentLoaded", () => {
   const ui = new UI();
   const products = new Products();
+
+  // setup application
+  ui.setupAPP();
 
   // get all products / .then allow you to chain
   products
