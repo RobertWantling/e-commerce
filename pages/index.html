@@ -113,7 +113,7 @@
                     Search
                   </button>
                 </form>
-                <div class="cart-btn">
+                <div class="cart-btn hide">
                   <span class="nav-icon">
                     <i class="fas fa-cart-plus"></i>
                   </span>
@@ -136,15 +136,15 @@
                 corrupti nisi, earum neque vitae iusto.
               </p>
               <button class="btn btn-light px-5 py-2 test">
-                By now for £60.99
+                By now for £60.99!
               </button>
             </div>
-            <div class="col-md-5 col-sm-12 h-25 w-25">
-              <!-- <img -->
-              <!-- class="img" -->
-              <!-- src="./assests/climbing-shoe-trimmy.jpg" -->
-              <!-- alt="climbing shoe" -->
-              <!-- /> -->
+            <div class="col-md-5 col-sm-12">
+              <img
+                class="img sale-shoe"
+                src="./assests/product-3-bg-remover.png"
+                alt="climbing shoe"
+              />
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@
               </p>
             </div>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-6 test">
                 <div class="pray">
                   <img
                     src="./assests/best-shoes-for-bouldering.jpeg"
@@ -180,13 +180,13 @@
                   <h1 class="top-picks-head">
                     Pro picks from the top climbers
                   </h1>
-                  <p class="pt-4">
+                  <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Sequi facilis magni nostrum libero magnam vel, fugit
                     voluptatibus, consectetur accusantium excepturi rem rerum
                     atque nulla officiis, possimus quod laboriosam beatae ab.
                   </p>
-                  <p>
+                  <p class="hide">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Assumenda nisi voluptas eveniet id laudantium eos magnam
                     enim, iure hic rem adipisci voluptatibus aspernatur
@@ -199,13 +199,11 @@
                     src="./assests/weekly-deals-pic.jpeg"
                     alt="deals"
                   />
-                  <h1 class="sale-head">Reach Those Deals!</h1>
+
+                  <h1 class="sale-head">Reach Those <span> Deals!</span></h1>
                   <h2>20% OFF</h2>
                   <br />
-                  <p class="sale-p">
-                    EVOLV AGRO & SHARMA <br />
-                    CLIMBING SHOES
-                  </p>
+                  <p class="sale-p">EVOLV AGRO & SHARMA CLIMBING SHOES</p>
                 </div>
               </div>
             </div>
@@ -223,9 +221,7 @@
             </div>
           </div>
           <div class="container-fluid">
-            <div
-              class="top-picks d-flex flex-md-row flex-wrap justify-content-center"
-            >
+            <div class="top-picks d-flex flex-md-row justify-content-center">
               <div class="rect">
                 <img
                   class="top-pick-img"
@@ -243,7 +239,7 @@
                   alt="clothes"
                 />
                 <h1 class="thin-h1">
-                  <span class="bold-h1">BOULDERING</span> HIGHLIGHTS
+                  <span class="bold-h1">BOULDER</span> HIGHLIGHTS
                 </h1>
               </div>
               <div class="rect">
@@ -279,6 +275,18 @@
                 <!-- First product -->
                 <div class="card">
                   <div class="card-body">
+                    <div class="add-wishlist-tp">
+                      <img
+                        src="../pages/assests/icons/heart.png"
+                        alt="add-to-wishlist"
+                      />
+                    </div>
+                    <div class="add-cart-tp">
+                      <img
+                        src="../pages/assests/icons/bag-plus.png"
+                        alt="add-to-cart"
+                      />
+                    </div>
                     <div class="title">
                       <img
                         class="img"
@@ -287,23 +295,39 @@
                         width="174"
                         height="190"
                       />
-                      <h5 class="card-title">Beastmaker - 1000 series</h5>
                     </div>
-                    <!-- <p class="card-text"> -->
-                    <!-- Input info about the product that is going to be displayed -->
-                    <!-- here -->
-                    <!-- </p> -->
+                    <div class="des">
+                      <span>Beastmaker</span>
+                    </div>
+                    <h5 class="card-title">1000 series</h5>
+                    <div class="star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
                     <div class="pricing">
                       <h1>£129.95</h1>
-                      <button class="btn btn-dark px-2 py-2 mb-5">
-                        Purchase Now
-                      </button>
                     </div>
+                    <!-- <a href="#"><i class="fa fa-cart-plus cart1"></i></a> -->
                   </div>
                 </div>
                 <!-- Second product -->
                 <div class="card">
                   <div class="card-body">
+                    <div class="add-wishlist-tp">
+                      <img
+                        src="../pages/assests/icons/heart.png"
+                        alt="add-to-wishlist"
+                      />
+                    </div>
+                    <div class="add-cart-tp">
+                      <img
+                        src="../pages/assests/icons/bag-plus.png"
+                        alt="add-to-cart"
+                      />
+                    </div>
                     <div class="title">
                       <img
                         class="img"
@@ -312,23 +336,43 @@
                         width="174"
                         height="190"
                       />
-                      <h5 class="card-title">Scarpa - Instinct VSR</h5>
                     </div>
+                    <div class="des">
+                      <span>Scarpa</span>
+                    </div>
+                    <h5 class="card-title">Instinct VSR</h5>
+
                     <!-- <p class="card-text"> -->
                     <!-- Input info about the product that is going to be displayed -->
                     <!-- here -->
                     <!-- </p> -->
+                    <div class="star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
                     <div class="pricing">
                       <h1>£120.95</h1>
-                      <button class="btn btn-dark px-2 py-2 mb-5">
-                        Purchase Now
-                      </button>
                     </div>
                   </div>
                 </div>
                 <!-- Third product -->
                 <div class="card">
                   <div class="card-body">
+                    <div class="add-wishlist-tp">
+                      <img
+                        src="../pages/assests/icons/heart.png"
+                        alt="add-to-wishlist"
+                      />
+                    </div>
+                    <div class="add-cart-tp">
+                      <img
+                        src="../pages/assests/icons/bag-plus.png"
+                        alt="add-to-cart"
+                      />
+                    </div>
                     <div class="title">
                       <img
                         class="img"
@@ -337,23 +381,42 @@
                         width="174"
                         height="190"
                       />
-                      <h5 class="card-title">La Sportiva - Skwama</h5>
                     </div>
+                    <div class="des">
+                      <span>La Sportiva</span>
+                    </div>
+                    <h5 class="card-title">Skwama</h5>
+
                     <!-- <p class="card-text"> -->
                     <!-- Input info about the product that is going to be displayed -->
                     <!-- here -->
                     <!-- </p> -->
+                    <div class="star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
                     <div class="pricing">
                       <h1>£154.95</h1>
-                      <button class="btn btn-dark px-2 py-2 mb-5">
-                        Purchase Now
-                      </button>
                     </div>
                   </div>
                 </div>
                 <!-- Fourth product -->
                 <div class="card">
                   <div class="card-body">
+                    <div class="add-wishlist-tp">
+                      <img
+                        src="../pages/assests/icons/heart.png"
+                        alt="add-to-wishlist"
+                      />
+                    </div>
+                    <div class="add-cart-tp">
+                      <img
+                        src="../pages/assests/icons/bag-plus.png"
+                        alt="add-to-cart"
+                      />
+                    </div>
                     <div class="title">
                       <img
                         class="img"
@@ -362,25 +425,38 @@
                         width="174"
                         height="190"
                       />
-                      <h5 class="card-title">
-                        Boot Bananas - Shoe Deodorisers
-                      </h5>
                     </div>
-                    <!-- <p class="card-text"> -->
-                    <!-- Input info about the product that is going to be displayed -->
-                    <!-- here -->
-                    <!-- </p> -->
+                    <div class="des">
+                      <span>Boot Bananas</span>
+                    </div>
+                    <h5 class="card-title">Shoe Deodorisers</h5>
+
+                    <div class="star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
                     <div class="pricing">
                       <h1>£19.95</h1>
-                      <button class="btn btn-dark px-2 py-2 mb-5">
-                        Purchase Now
-                      </button>
                     </div>
                   </div>
                 </div>
                 <!-- Fifth product -->
                 <div class="card">
                   <div class="card-body">
+                    <div class="add-wishlist-tp">
+                      <img
+                        src="../pages/assests/icons/heart.png"
+                        alt="add-to-wishlist"
+                      />
+                    </div>
+                    <div class="add-cart-tp">
+                      <img
+                        src="../pages/assests/icons/bag-plus.png"
+                        alt="add-to-cart"
+                      />
+                    </div>
                     <div class="title">
                       <img
                         class="img"
@@ -389,17 +465,25 @@
                         width="174"
                         height="190"
                       />
-                      <h5 class="card-title">Mellow Climbing - vol 1</h5>
                     </div>
+                    <div class="des">
+                      <span>Mellow Climbing</span>
+                    </div>
+                    <h5 class="card-title">vol 1: Expeditions</h5>
+
                     <!-- <p class="card-text"> -->
                     <!-- Input info about the product that is going to be displayed -->
                     <!-- here -->
                     <!-- </p> -->
+                    <div class="star">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
                     <div class="pricing">
                       <h1>£24.95</h1>
-                      <button class="btn btn-dark px-2 py-2 mb-5">
-                        Purchase Now
-                      </button>
                     </div>
                   </div>
                 </div>
@@ -408,35 +492,36 @@
           </div>
         </section>
 
-        <section class="section-3 container-fluid p-0 text-center">
-          <div class="row w-100">
-            <div class="col-md-12 col-sm-12">
-              <h1 class="text-light">Emporium Newsletter</h1>
+        <section class="section-3 container-fluid text-center">
+          <div class="newsletter row w-100">
+            <h1 class="text-light">Emporium Newsletter</h1>
+
+            <div class="col-md-6 col-sm-12 justify-content-center">
               <p class="text-muted">
                 Subscribe to our Emporium newsletter to recieve exlusive access
                 to deals, events, early access to promotional sales and be the
                 first to hear about the latest products!
               </p>
-              <div class="d-flex justify-content-center">
-                <form class="form-inline" accept-charset="UTF-8">
-                  <div class="col-md-6 col-sm-12 newsletter">
-                    <label for="" class="text-left pb-2">Stay Updated</label>
-                    <div class="input-group pr-5 form-inline">
-                      <input
-                        type="text"
-                        class="form-control bg-dark text-white"
-                        placeholder="Enter your email address"
-                        width="35rem"
-                      />
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="fa fa-arrow-right"></i>
-                        </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+              <form class="form-inline" accept-charset="UTF-8">
+                <div class="col-sm-12 pb-10">
+                  <label for="" class="text-left pb-2">Stay Updated</label>
+                  <div class="input-group pr-5 form-inline">
+                    <input
+                      type="text"
+                      class="form-control bg-dark text-white"
+                      placeholder="Enter your email address"
+                      size="50"
+                    />
+                    <div class="input-group-prepend">
+                      <div class="input-group-text btn-newsletter">
+                        <i class="fa fa-arrow-right"></i>
                       </div>
                     </div>
                   </div>
-                </form>
-              </div>
+                </div>
+              </form>
             </div>
           </div>
           <div class="platform row">
@@ -666,27 +751,63 @@
       <footer>
         <div class="container-fluid">
           <div class="row text-left">
-            <div class="col-md-10 col-ms-10">
-              <h1 class="text-light">About us</h1>
+            <div class="col-md-3 col-ms-3">
+              <i class="fa-brands fa-suse fa-2x logo"></i>
+              <h4 class="text-light">Contact</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
-                accusantium soluta odit dolore reiciendis, doloremque
-                voluptatem, quibusdam ipsam fugit velit iste quia eveniet? Fuga
-                voluptatum labore, veritatis dolore maiores dolorum.
+                <strong>Address: </strong> 47 Wellington Road, Street 53, San
+                Francisco
               </p>
-              <p class="pt-4">
-                © Copyright <span>Robert Wantling</span>, 2023. All rights
-                reserved.
-              </p>
-              <p>We accept the following payment methods</p>
-              <img
-                class="payment"
-                src="./assests/payment-visa.svg"
-                alt="payment-methods"
-              />
+              <p><strong>Phone: </strong> +01 2222 498 / (+44) 35400 212500</p>
+              <p><strong>Hours: </strong> 9:00 - 18:00, Mon - Sun</p>
+              <h4 class="text-light follow-us">Follow Us</h4>
+              <p>Let us be socail</p>
+              <div class="follow column">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-mail"></i>
+              </div>
             </div>
-            <div class="col-md-2 col-sm-12">
-              <div class="div coloumn">
+            <div class="col-md-3">
+              <h4>About</h4>
+              <a href="#">About Us</a>
+              <a href="#">Delivery Information</a>
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms & Conditions</a>
+              <a href="#">Contact Us</a>
+            </div>
+            <div class="col-md-3">
+              <h4>My Account</h4>
+              <a href="#">Sign In</a>
+              <a href="#">View Cart</a>
+              <a href="#">My Wishlist</a>
+              <a href="#">Track My Order</a>
+              <a href="#">Help</a>
+            </div>
+            <div class="col-md-3 col-sm-3">
+              <div class="div coloumn install">
+                <h4>Install App</h4>
+                <p>From App Store or Goggle Play</p>
+                <div class="row">
+                  <img
+                    class="pay"
+                    src="./assests/icons/app-store.png"
+                    alt="app"
+                  />
+                  <img
+                    class="pay"
+                    src="./assests/icons/google-play.png"
+                    alt="google pay"
+                  />
+                </div>
+                <p>Secured Payment methods</p>
+                <img
+                  class="payment"
+                  src="./assests/payment-visa.svg"
+                  alt="payment-methods"
+                />
                 <img
                   src="./assests/royalmail.png"
                   alt="royal-mail"
@@ -700,18 +821,12 @@
                   alt="evri"
                 />
               </div>
-              <h4 class="text-light">Follow Us</h4>
-              <p>Let us be socail</p>
-              <div class="column">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fab fa-mail"></i>
-              </div>
             </div>
           </div>
         </div>
+        <p class="pt-4 copyright">
+          © Copyright <span> Robert Wantling</span>, 2023. All rights reserved.
+        </p>
       </footer>
     </div>
   </body>

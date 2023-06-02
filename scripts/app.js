@@ -25,7 +25,7 @@ let buttonsDOM = [];
 // classes responsible for getting products - locally (later content full data management)
 
 class Products {
-  async getProducts() {
+  async getProductsShoes() {
     try {
       let contenful = await client.getEntries({
         content_type: "emporium",
@@ -48,6 +48,31 @@ class Products {
     }
   }
 }
+
+class Harnesses {
+  async getProductHarnesses() {
+    try {
+      let contenful = await client.getEntries({
+        content_type: "climbingHarnesses",
+      });
+      console.log(contenful);
+      // recieve local data via fetch
+      // let result = await fetch("../scripts/products.json"); // ajax request
+      // let data = await result.json(); // sysncrounous code in syncrounous matter
+      let harnessProducts = contenful.items;
+      harnessProducts = harnessProducts.map((item) => {
+        const { title, price } = item.fields;
+        const { id } = item.sys;
+        const image = item.fields.image.fields.file.url;
+        return { title, price, id, image };
+      });
+      return harnessProducts;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
+
 // async - always returns the promise can use chainging on dot then - and await - wait till promise is settled and then return result
 
 // dispaly products - responsible for getting all items that are being returned from product and then displaying them or manipulating / or getting them from local storage
@@ -55,7 +80,7 @@ class Products {
 class UI {
   // this method get array Products - call method once get products @ .then
   displayProducts(products) {
-    // console.log(products);
+    console.log(products);
     let result = "";
     products.forEach((product) => {
       result += `
@@ -82,6 +107,36 @@ class UI {
     });
     productsDOM.innerHTML = result;
   }
+
+  displayHarnessProducts(harnessProducts) {
+    console.log(harnessProducts);
+    let result = "";
+    harnessProducts.forEach((harness) => {
+      resultHarness += `
+  <article class="product">
+    <div class="img-container">
+      <img src=${harness.image} alt="product"
+        class="product-img"
+        />
+        <button class="bag-btn" data-id=${harness.id}>
+          <i class="fas fa-shopping-cart">add to basket</i>
+        </button>
+    
+    <div class="add-to-wishlist">
+      <img src="../pages/assests/icons/heart.png" alt="add-to-wishlist">
+    </div>
+    <div class="add-to-cart">
+      <img src="../pages/assests/icons/bag-plus.png" alt="add-to-cart">
+    </div>
+    </div>
+    <h3>${harness.title}</h3>
+    <h4>£${harness.price}</h4>
+  </article>
+  `;
+    });
+    productsDOM.innerHTML = result;
+  }
+
   getBagBtns() {
     const buttons = [...document.querySelectorAll(".bag-btn")];
     // console.log(buttons); // call this method after calling it ^^ - easier with spread Op ... turn into an array able to manipulate - can also manipulate the nodeList
@@ -99,7 +154,10 @@ class UI {
         event.target.disabled = true;
         // these two things will happen when nothing is in the cart
         // get product from products based on id from the btn
-        let cartItem = { ...Storage.getProduct(id), amount: 1 }; // id is from ^^ from the dataset attribute
+        let cartItem = {
+          ...Storage.getProductsShoes(id),
+          amount: 1,
+        }; // id is from ^^ from the dataset attribute
         // use spread on 'Storage' will get all info from object we are returning on products - add one more property of amount
         // add product to the cart
         cart = [...cart, cartItem];
@@ -252,10 +310,14 @@ class Storage {
     // have to stringify the products array
     localStorage.setItem("products", JSON.stringify(products));
   }
-  static getProduct(id) {
+  static getProductsShoes(id) {
     let products = JSON.parse(localStorage.getItem("products"));
     // return product from getProduct method
     return products.find((product) => product.id === id);
+  }
+  static getProductHarnesses(id) {
+    let harnessProducts = JSON.parse(localStorage.getItem("harness-Products"));
+    return harnessProducts.find((harnessProducts) => harnessProducts.id === id);
   }
   static saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -271,6 +333,7 @@ class Storage {
 // EL where kick things off - so once things are loaded things start to load
 document.addEventListener("DOMContentLoaded", () => {
   const ui = new UI();
+  const harnesses = new Harnesses();
   const products = new Products();
 
   // setup application
@@ -278,11 +341,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // get all products / .then allow you to chain
   products
-    .getProducts()
+    .getProductsShoes()
     .then((products) => {
       // then - get product
       ui.displayProducts(products); // write 1 method 'ui' and display the product
       Storage.saveProducts(products); // static - call class - to save
+    })
+    .then(() => {
+      ui.getBagBtns();
+      ui.cartLogic();
+    });
+  harnesses
+    .getProductHarnesses()
+    .then((harnesses) => {
+      ui.displayProducts(harnesses);
+      Storage.saveProducts(harnesses);
     })
     .then(() => {
       ui.getBagBtns();
