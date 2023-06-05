@@ -33,16 +33,13 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-icon"></span>
+                <!-- <span class="navbar-toggler-icon"></span> -->
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="ms-auto"></div>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      aria-current="page"
-                      href="./index.html"
+                    <a class="nav-link" aria-current="page" href="./index.html"
                       >Home</a
                     >
                   </li>
@@ -50,12 +47,13 @@
                     <a class="nav-link" href="#">About Us</a>
                   </li>
                   <li class="nav-item dropdown">
+                    <!--  class="nav-link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+aria-expanded="false" -->
                     <a
-                      class="nav-link dropdown-toggle"
                       href="./products.html"
                       role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
+                      class="active nav-link"
                       >Our Products</a
                     >
                     <ul class="dropdown-menu" id="nav">
@@ -154,347 +152,35 @@
       </header>
 
       <main>
-        <section class="section-1">
-          <div class="container text-centre">
-            <div class="section-intro text-centre row">
-              <h1 class="intro-text">Our Promise</h1>
-              <p>
-                Climbing is a challenging and exhilarating pursuit, but it is
-                important for people to have the correct equipment to ensure
-                they stay safe at all times, whether they are scaling the
-                highest mountains or just starting out. So if you're scaling the
-                heights when rock climbing, heading up above the clouds while
-                mountain climbing, or hanging a few feet from the ground while
-                bouldering, Emporium stocks a range of climbing gear to suit
-                your every need.
-              </p>
-            </div>
-            <div class="row">
-              <div class="col-md-6 test">
-                <div class="pray">
-                  <img
-                    src="./assests/best-shoes-for-bouldering.jpeg"
-                    alt="pro-picks"
-                  />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="panel text-center w-100">
-                  <h1 class="top-picks-head">
-                    Pro picks from the top climbers
-                  </h1>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sequi facilis magni nostrum libero magnam vel, fugit
-                    voluptatibus, consectetur accusantium excepturi rem rerum
-                    atque nulla officiis, possimus quod laboriosam beatae ab.
-                  </p>
-                  <p class="hide">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Assumenda nisi voluptas eveniet id laudantium eos magnam
-                    enim, iure hic rem adipisci voluptatibus aspernatur
-                    accusantium distinctio iste mollitia, aliquid est libero!
-                  </p>
-                </div>
-                <div class="sale">
-                  <img
-                    class="sale-img"
-                    src="./assests/weekly-deals-pic.jpeg"
-                    alt="deals"
-                  />
+        <section class="products products-center">
+          <article class="product">
+            <div class="img-container">
+              <img
+                src="./assests/products/harness's/harness-product-1.jpeg"
+                alt="product"
+                class="product-img"
+              />
+              <button class="bag-btn" data-id="${harness.id}">
+                <i class="fas fa-shopping-cart">add to basket</i>
+              </button>
 
-                  <h1 class="sale-head">Reach Those <span> Deals!</span></h1>
-                  <h2>20% OFF</h2>
-                  <br />
-                  <p class="sale-p">EVOLV AGRO & SHARMA CLIMBING SHOES</p>
-                </div>
+              <div class="add-to-wishlist">
+                <img
+                  src="../pages/assests/icons/heart.png"
+                  alt="add-to-wishlist"
+                />
+              </div>
+              <div class="add-to-cart">
+                <img
+                  src="../pages/assests/icons/bag-plus.png"
+                  alt="add-to-cart"
+                />
               </div>
             </div>
-          </div>
+            <h3>${</h3>
+            <h4>£${harness.price}</h4>
+          </article>
         </section>
-        <!-- weekly deals -->
-        <section class="section-2 container-fluid p-0">
-          <div class="cover">
-            <div class="content text-center">
-              <h1>Some Items That Make Us Unique</h1>
-              <p>
-                Choose from a wide selection of hand picked items, that are
-                sourced from the finest creators and crafters.
-              </p>
-            </div>
-          </div>
-          <div class="container-fluid">
-            <div class="top-picks d-flex flex-md-row justify-content-center">
-              <div class="rect">
-                <img
-                  class="top-pick-img"
-                  src="./assests/featured-clothing.jpeg"
-                  alt="clothes"
-                />
-                <h1 class="thin-h1">
-                  <span class="bold-h1">FEATURED</span> CLOTHING
-                </h1>
-              </div>
-              <div class="rect">
-                <img
-                  class="top-pick-img"
-                  src="./assests/bouldering-highlights.webp"
-                  alt="clothes"
-                />
-                <h1 class="thin-h1">
-                  <span class="bold-h1">BOULDER</span> HIGHLIGHTS
-                </h1>
-              </div>
-              <div class="rect">
-                <img
-                  class="top-pick-img"
-                  src="./assests/dmm-hardware.jpeg"
-                  alt="clothes"
-                />
-                <h1 class="thin-h1">
-                  <span class="bold-h1">DMM</span> HARDWARE
-                </h1>
-              </div>
-              <div class="rect">
-                <img
-                  class="top-pick-img"
-                  src="./assests/moon-board.jpeg"
-                  alt="clothes"
-                />
-                <h1 class="thin-h1">
-                  <span class="bold-h1">MOON</span> PRODUCTS
-                </h1>
-              </div>
-            </div>
-          </div>
-
-          <div class="purchase text-center">
-            <div class="highlight-box">
-              <h1 class="highlight-txt">Highlights of the week</h1>
-            </div>
-            <h1 class="text-center">OUR TOP PICKS</h1>
-            <div class="cards">
-              <div class="d-flex flex-row justify-content-center flex-wrap">
-                <!-- First product -->
-                <div class="card">
-                  <div class="card-body">
-                    <div class="add-wishlist-tp">
-                      <img
-                        src="../pages/assests/icons/heart.png"
-                        alt="add-to-wishlist"
-                      />
-                    </div>
-                    <div class="add-cart-tp">
-                      <img
-                        src="../pages/assests/icons/bag-plus.png"
-                        alt="add-to-cart"
-                      />
-                    </div>
-                    <div class="title">
-                      <img
-                        class="img"
-                        src="./assests/beastmaker2000.jpg"
-                        alt="beastmaker 1000"
-                        width="174"
-                        height="190"
-                      />
-                    </div>
-                    <div class="des">
-                      <span>Beastmaker</span>
-                    </div>
-                    <h5 class="card-title">1000 series</h5>
-                    <div class="star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="pricing">
-                      <h1>£129.95</h1>
-                    </div>
-                    <!-- <a href="#"><i class="fa fa-cart-plus cart1"></i></a> -->
-                  </div>
-                </div>
-                <!-- Second product -->
-                <div class="card">
-                  <div class="card-body">
-                    <div class="add-wishlist-tp">
-                      <img
-                        src="../pages/assests/icons/heart.png"
-                        alt="add-to-wishlist"
-                      />
-                    </div>
-                    <div class="add-cart-tp">
-                      <img
-                        src="../pages/assests/icons/bag-plus.png"
-                        alt="add-to-cart"
-                      />
-                    </div>
-                    <div class="title">
-                      <img
-                        class="img"
-                        src="./assests/scarpa-instinct.jpeg"
-                        alt="instinct climbing shoes"
-                        width="174"
-                        height="190"
-                      />
-                    </div>
-                    <div class="des">
-                      <span>Scarpa</span>
-                    </div>
-                    <h5 class="card-title">Instinct VSR</h5>
-
-                    <!-- <p class="card-text"> -->
-                    <!-- Input info about the product that is going to be displayed -->
-                    <!-- here -->
-                    <!-- </p> -->
-                    <div class="star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="pricing">
-                      <h1>£120.95</h1>
-                    </div>
-                  </div>
-                </div>
-                <!-- Third product -->
-                <div class="card">
-                  <div class="card-body">
-                    <div class="add-wishlist-tp">
-                      <img
-                        src="../pages/assests/icons/heart.png"
-                        alt="add-to-wishlist"
-                      />
-                    </div>
-                    <div class="add-cart-tp">
-                      <img
-                        src="../pages/assests/icons/bag-plus.png"
-                        alt="add-to-cart"
-                      />
-                    </div>
-                    <div class="title">
-                      <img
-                        class="img"
-                        src="./assests/sportiva-skwama.webp"
-                        alt="skwama climbing shoes"
-                        width="174"
-                        height="190"
-                      />
-                    </div>
-                    <div class="des">
-                      <span>La Sportiva</span>
-                    </div>
-                    <h5 class="card-title">Skwama</h5>
-
-                    <!-- <p class="card-text"> -->
-                    <!-- Input info about the product that is going to be displayed -->
-                    <!-- here -->
-                    <!-- </p> -->
-                    <div class="star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="pricing">
-                      <h1>£154.95</h1>
-                    </div>
-                  </div>
-                </div>
-                <!-- Fourth product -->
-                <div class="card">
-                  <div class="card-body">
-                    <div class="add-wishlist-tp">
-                      <img
-                        src="../pages/assests/icons/heart.png"
-                        alt="add-to-wishlist"
-                      />
-                    </div>
-                    <div class="add-cart-tp">
-                      <img
-                        src="../pages/assests/icons/bag-plus.png"
-                        alt="add-to-cart"
-                      />
-                    </div>
-                    <div class="title">
-                      <img
-                        class="img"
-                        src="./assests/banana-deo.jpeg"
-                        alt="deodoriser shoes"
-                        width="174"
-                        height="190"
-                      />
-                    </div>
-                    <div class="des">
-                      <span>Boot Bananas</span>
-                    </div>
-                    <h5 class="card-title">Shoe Deodorisers</h5>
-
-                    <div class="star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="pricing">
-                      <h1>£19.95</h1>
-                    </div>
-                  </div>
-                </div>
-                <!-- Fifth product -->
-                <div class="card">
-                  <div class="card-body">
-                    <div class="add-wishlist-tp">
-                      <img
-                        src="../pages/assests/icons/heart.png"
-                        alt="add-to-wishlist"
-                      />
-                    </div>
-                    <div class="add-cart-tp">
-                      <img
-                        src="../pages/assests/icons/bag-plus.png"
-                        alt="add-to-cart"
-                      />
-                    </div>
-                    <div class="title">
-                      <img
-                        class="img"
-                        src="./assests/mello-vol1.webp"
-                        alt="magazine"
-                        width="174"
-                        height="190"
-                      />
-                    </div>
-                    <div class="des">
-                      <span>Mellow Climbing</span>
-                    </div>
-                    <h5 class="card-title">vol 1: Expeditions</h5>
-
-                    <!-- <p class="card-text"> -->
-                    <!-- Input info about the product that is going to be displayed -->
-                    <!-- here -->
-                    <!-- </p> -->
-                    <div class="star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </div>
-                    <div class="pricing">
-                      <h1>£24.95</h1>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section class="section-3 container-fluid text-center">
           <div class="newsletter row w-100">
             <h1 class="text-light">Emporium Newsletter</h1>
@@ -525,50 +211,6 @@
                   </div>
                 </div>
               </form>
-            </div>
-          </div>
-          <div class="platform row">
-            <div class="col-md-4 col-sm-12 text-right">
-              <div class="backdrop-fa desktop shadow-lg">
-                <div class="d-flex flex-row justify-content-center">
-                  <div class="text text-left">
-                    <h3 class="pt-1 m-0">Facebook</h3>
-                    <i class="fa-brands fa-facebook fa-4x py-2 pr-3"></i>
-                    <p class="p-0 m-0">
-                      Follow for chance to win giveaways and keep update
-                      Emporium team
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-12 text-left">
-              <div class="backdrop-insta desktop shadow-lg">
-                <div class="d-flex flex-row justify-content-center">
-                  <div class="text text-left">
-                    <h3 class="pt-1 m-0">Instagram</h3>
-                    <i class="fa-brands fa-instagram fa-4x py-2 pr-3"></i>
-                    <p class="p-0 m-0">
-                      Follow for chance to win giveaways and keep update
-                      Emporium team
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-12 text-center">
-              <div class="backdrop-yt desktop shadow-lg">
-                <div class="d-flex flex-row justify-content-center">
-                  <div class="text text-left">
-                    <h3 class="pt-1 m-0">Youtube</h3>
-                    <i class="fa-brands fa-youtube fa-4x py-2 pr-3"></i>
-                    <p class="p-0 m-0">
-                      Follow for chance to win giveaways and keep update
-                      Emporium team
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>

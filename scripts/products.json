@@ -99,6 +99,36 @@
           "fields": { "file": { "url": "./assests/products/product-8.jpeg" } }
         }
       }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "Tarantula Climbing Shoes",
+        "price": 65.99,
+        "image": {
+          "fields": { "file": { "url": "./assests/products/product-2.jpeg" } }
+        }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "Tarantula Climbing Shoes",
+        "price": 65.99,
+        "image": {
+          "fields": { "file": { "url": "./assests/products/product-2.jpeg" } }
+        }
+      }
+    },
+    {
+      "sys": { "id": "2" },
+      "fields": {
+        "title": "Tarantula Climbing Shoes",
+        "price": 65.99,
+        "image": {
+          "fields": { "file": { "url": "./assests/products/product-2.jpeg" } }
+        }
+      }
     }
   ]
 }
