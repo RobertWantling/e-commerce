@@ -302,6 +302,12 @@ class UI {
   }
 }
 
+// Highlight of week add to cart
+let cartHighlight = [];
+
+// add to cart
+function addToCart(id) {}
+
 // Local storage
 // <img src="../pages/assests/icons/heart.png" alt="add to wish list">
 class Storage {

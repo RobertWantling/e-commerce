@@ -685,6 +685,23 @@ footer .install img {
   margin: 10px 0 15px 0;
 }
 
+/* reward banner */
+#highlight-banner li a {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+#highlight-banner li {
+  width: 33%;
+  display: inline-flex;
+  text-align: center;
+  align-items: stretch;
+  justify-content: center;
+}
+
 .section-title h2 {
   text-align: center;
   font-size: 2.5rem;
